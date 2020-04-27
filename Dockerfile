@@ -8,7 +8,7 @@ RUN curl --silent --show-error --fail --location \
     | tar --no-same-owner -C /usr/bin/ -xz caddy \
     && chmod 0755 /usr/bin/caddy \
     && caddy -version \
-    && docker-php-ext-install mbstring pdo pdo_mysql \
+    && docker-php-ext-install mbstring pdo pdo_mysql opcache \
     && mkdir -p /srv/app/pubilc
 
 COPY . /srv/app
